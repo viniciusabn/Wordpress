@@ -5,7 +5,7 @@
     unarchive: src=/tmp/latest.tar.gz dest=/tmp copy=no
 
   - name: "Copia os arquivos da pasta /tmp/wordpress para o diretório da instalação"
-    synchronize: src=/tmp/wordpress/ dest={{dir_wordpress}} remote_src=yes recursive=yes
+    shell: cp -R /tmp/wordpress/ {{dir_wordpress}}
 
   - name: "Copia arquivo de configuração wp-config para o diretório da instalação"
     template: src=wp-config.php.j2 dest={{dir_wordpress}}/wp-config.php
