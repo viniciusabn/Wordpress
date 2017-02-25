@@ -1,11 +1,14 @@
   - name: "Dowload do wordpress"
     get_url: url=https://wordpress.org/latest.tar.gz dest=/tmp/latest.tar.gz
 
-  - name: "Abre wordpress em /opt/wordpress"
-    unarchive: src=/tmp/latest.tar.gz dest=/opt copy=no
+  - name: "Descompacta wordpress na pasta tmp"
+    unarchive: src=/tmp/latest.tar.gz dest=/tmp copy=no
 
-  - name: "Copia arquivo de configuração wp-config para /opt/wordpress"
-    template: src=wp-config.php.j2 dest=/opt/wordpress/wp-config.php
+  - name: "Copia os arquivos da pasta /tmp/wordpress para o diretório da instalação"
+    synchronize: src=/tmp/wordpress/ dest={{dir_wordpress}}
+
+  - name: "Copia arquivo de configuração wp-config para o diretório da instalação"
+    template: src=wp-config.php.j2 dest={{dir_wordpress}}/wp-config.php
 
   - name: "Corrige permissões"
     file: path=/opt/wordpress recurse=yes owner=www-data group=www-data
