@@ -1,0 +1,11 @@
+  - name: "Copia configuração de blog.nginx para /etc/nginx/sites-avaible/blog"
+    template: src=blog.nginx dest=/etc/nginx/sites-available/blog
+
+  - name: "Ativa o site"
+    shell: ln -fs /etc/nginx/sites-available/blog /etc/nginx/sites-enabled/blog
+
+  - name: "Apagar o site default"
+    shell: rm -f /etc/nginx/sites-enabled/default
+
+  - name: "Reinicia NGINX"
+    service: name=nginx state=restarted

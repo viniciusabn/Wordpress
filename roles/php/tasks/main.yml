@@ -1,0 +1,2 @@
+  - name: "Reinicia PHP"
+    service: name=php5-fpm state=restarted
