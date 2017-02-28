@@ -1,5 +1,5 @@
 dir_wordpress: /opt/wordpress
-url: 192.168.33.8
+url: 192.168.33.9
 titulo_wordpress: Teste_Ansible
 admin_wordpress: vinicius
 admin_pass_wordpress: vinicius
