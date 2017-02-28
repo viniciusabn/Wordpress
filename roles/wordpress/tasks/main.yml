@@ -13,9 +13,6 @@
   - name: "Copia arquivo de configuração wp-config para o diretório da instalação"
     template: src=wp-config.php.j2 dest={{dir_wordpress}}/wp-config.php
 
-  - name: "Corrige permissões"
-    file: path=/opt/wordpress recurse=yes owner=www-data group=www-data
-
   - name: "Instala plugin wp-cli"
     shell: "{{item}}"
     with_items:
@@ -26,3 +23,6 @@
 
   - name: "Configurando wordpress"
     shell: wp core install --url={{url}} --title={{titulo_wordpress}} --admin_user={{admin_wordpress}} --admin_password={{admin_pass_wordpress}} --admin_email={{admin_email_wordpress}} --path={{dir_wordpress}} --allow-root
+
+  - name: "Corrige permissões"
+    file: path=/opt/wordpress recurse=yes owner=www-data group=www-data
