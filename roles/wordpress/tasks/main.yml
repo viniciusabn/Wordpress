@@ -21,7 +21,7 @@
     with_items:
       - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
       - sudo apt-get install php5-cli
-      - php wp-cli.phar --info 
+      - sudo php wp-cli.phar --info 
       - chmod +x wp-cli.phar 
       - sudo mv wp-cli.phar /usr/local/bin/wp
 
