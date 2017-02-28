@@ -1,4 +1,3 @@
-vars/mysql.yml
-vars/wordpress.yml
+vars/*.yml
 *~
 .vagrant
