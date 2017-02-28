@@ -20,4 +20,4 @@
     shell: curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && sudo mv wp-cli.phar /usr/local/bin/wp
 
   - name: "Configurando wordpress"
-    shell: wp core install --url={{url}} --title={{titulo_wordpress}} --admin_user={{admin_wordpress}} --admin_password={{admin_pass_wordpress}} --admin_email={{admin_email_wordpress}}
+    shell: wp core install --url={{url}} --title="{{titulo_wordpress}}" --admin_user={{admin_wordpress}} --admin_password={{admin_pass_wordpress}} --admin_email={{admin_email_wordpress}} --path={{dir_wordpress}}
