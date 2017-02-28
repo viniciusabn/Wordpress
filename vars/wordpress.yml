@@ -1,6 +1,6 @@
 dir_wordpress: /opt/wordpress
 url: 192.168.33.7
-titulo_wordpress: "Teste Ansible Foda!!"
+titulo_wordpress: Teste Ansible Foda
 admin_wordpress: vinicius
 admin_pass_wordpress: vinicius
 admin_email_wordpress: teste@gmail.com
