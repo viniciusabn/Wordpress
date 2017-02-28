@@ -4,7 +4,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "hashicorp/precise32"
 
   config.vm.define "wordpress" do |wordpress|
-    wordpress.vm.network :private_network, ip: "192.168.33.6"
+    wordpress.vm.network :private_network, ip: "192.168.33.7"
     wordpress.vm.provision "ansible" do |ansible| 
       ansible.playbook = "blog.yml"
       ansible.verbose = "vvv"
