@@ -1,13 +1,5 @@
-  - name: "Instala sistemas necessários"
+  - name: "Instala sistemas básicos e atualizações"
     apt: name={{item}} state=latest update_cache=yes install_recommends=yes
     with_items:
       - vim
-      - nginx
-      - php5-fpm
-      - mysql-server
-      - php5-mysql
-      - python-mysqldb
-
-  - name: "Cria diretório wordpress"
-    shell: mkdir -p "{{ dir_wordpress }}"
-
+      - htop

@@ -1,3 +1,6 @@
+  - name: "Instala nginx"
+    apt: name=nginx state=latest install_recommends=yes 
+
   - name: "Copia configuração de blog.nginx para /etc/nginx/sites-avaible/blog"
     template: src=blog.nginx dest=/etc/nginx/sites-available/blog
 
