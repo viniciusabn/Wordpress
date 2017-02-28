@@ -17,7 +17,7 @@
     file: path=/opt/wordpress recurse=yes owner=www-data group=www-data
 
   - name: "Instala plugin wp-cli"
-    shell: {{item}}
+    shell: "{{item}}"
     with_items:
       - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar 
       - chmod +x wp-cli.phar 
