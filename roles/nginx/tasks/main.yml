@@ -5,7 +5,7 @@
     template: src=blog.nginx dest=/etc/nginx/sites-available/blog
 
   - name: "Ativa o site"
-    file: source=/etc/nginx/sites-available/blog dest=/etc/nginx/sites-enabled/blog state=link
+    file: src=/etc/nginx/sites-available/blog dest=/etc/nginx/sites-enabled/blog state=link
 
   - name: "Apagar o site default"
     file: path=/etc/nginx/sites-enabled/default state=absent
