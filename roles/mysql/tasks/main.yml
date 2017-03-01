@@ -1,9 +1,6 @@
   - name: "Instala mysql server"
     apt: name=mysql-server state=latest install_recommends=yes
 
-  - name: "Instala php para mysql"
-    apt: name=php5-mysql state=latest install_recommends=yes
-
   - name: "Instala python-mysqldb"
     apt: name=python-mysqldb state=latest install_recommends=yes
 

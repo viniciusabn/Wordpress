@@ -1,5 +1,8 @@
   - name: "Instala PHP-FPM"
     apt: name=php5-fpm state=latest install_recommends=yes 
  
+  - name: "Instala extensao de mysql para php"
+    apt: name=php5-mysql state=latest install_recommends=yes 
+
   - name: "Reinicia PHP"
     service: name=php5-fpm state=restarted
