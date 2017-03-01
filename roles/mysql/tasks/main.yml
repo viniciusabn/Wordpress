@@ -1,6 +1,9 @@
   - name: "Instala mysql server"
     apt: name=mysql-server state=latest install_recommends=yes
 
+  - name: "Instala biblioteca python-mysqldb"
+    apt: name=python-mysqldb state=latest install_recommends=yes
+
   - name: "Copia configuração para /etc/mysql/my.cnf"
     template: src=etc.mysql.my.cnf dest=/etc/mysql/my.cnf 
 
@@ -26,4 +29,8 @@
       - "{{ ansible_eth1.ipv4.address }}"
       - 127.0.0.1
       - localhost
-      - {{url}}
+      - "{{ acesso_origem }}"
+
+  - name: "Reinicia Mysql"
+    service: name=mysql state=restarted enabled=true
+
