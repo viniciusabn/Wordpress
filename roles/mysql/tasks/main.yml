@@ -1,8 +1,8 @@
   - name: "Instala mysql server"
     apt: name=mysql-server state=latest install_recommends=yes
 
-  - name: "Instala python-mysqldb"
-    apt: name=python-mysqldb state=latest install_recommends=yes
+  - name: "Copia configuração para /etc/mysql/my.cnf"
+    template: src=etc.mysql.my.cnf dest=/etc/mysql/my.cnf 
 
   - name: "Inicia Mysql"
     service: name=mysql state=started enabled=true
@@ -23,6 +23,6 @@
   - name: " Cria usuário wordpress"
     mysql_user: name="{{mysql_wp_user}}" password="{{mysql_wp_password}}" priv="*.*:ALL,GRANT" host="{{item}}" state=present
     with_items:
-      - "{{ ansible_hostname }}"
+      - "{{ ansible_eth1.ipv4.address }}"
       - 127.0.0.1
       - localhost
