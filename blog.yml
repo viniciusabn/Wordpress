@@ -1,13 +1,19 @@
-- hosts: all
+- hosts: web 
+  sudo: True
+  user: vagrant
+  vars_files:
+    - vars/wordpress.yml
+  roles:
+    - common
+    - php
+    - nginx
+    - wordpress
+
+- hosts: db 
   sudo: True
   user: vagrant
   vars_files:
     - vars/mysql.yml
-    - vars/wordpress.yml
- 
   roles:
     - common
     - mysql
-    - php
-    - nginx
-    - wordpress
