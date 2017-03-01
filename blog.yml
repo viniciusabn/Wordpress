@@ -3,6 +3,7 @@
   user: vagrant
   vars_files:
     - vars/wordpress.yml
+    - vars/mysql.yml
   roles:
     - common
     - php
