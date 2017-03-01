@@ -1,5 +1,5 @@
   - name: "Cria diretório wordpress"
-    shell: mkdir -p "{{dir_wordpress}}"
+    file: path="{{dir_wordpress}}" state=directory
 
   - name: "Dowload do wordpress"
     get_url: url=https://wordpress.org/latest.tar.gz dest=/tmp/latest.tar.gz

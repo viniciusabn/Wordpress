@@ -5,10 +5,10 @@
     template: src=blog.nginx dest=/etc/nginx/sites-available/blog
 
   - name: "Ativa o site"
-    shell: ln -fs /etc/nginx/sites-available/blog /etc/nginx/sites-enabled/blog
+    file: source=/etc/nginx/sites-available/blog dest=/etc/nginx/sites-enabled/blog state=link
 
   - name: "Apagar o site default"
-    shell: rm -f /etc/nginx/sites-enabled/default
+    file: path=/etc/nginx/sites-enabled/default state=absent
 
   - name: "Reinicia NGINX"
     service: name=nginx state=restarted
