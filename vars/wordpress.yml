@@ -1,0 +1,7 @@
+dir_wordpress: /opt/wordpress
+url: 192.168.33.10
+titulo_wordpress: Teste_Ansible_2_maquinas
+admin_wordpress: vinicius
+admin_pass_wordpress: vinicius
+admin_email_wordpress: teste@gmail.com
+host_db: 192.168.33.11
